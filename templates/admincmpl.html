@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Wallet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+    {% csrf_token %}
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+   
+  </div>
+</div>
+
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1 ><a href="#" style="color:cornflowerblue;"><i><img src="/static/images/logo.png" alt=" " /></i>QuickPay</a></h1><br>
+      <p>Admin Pannel</p>
+    </div>
+    <div class="fl_right">
+      
+    </div>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div class="rounded">
+    <nav id="mainav" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li><a href="/indexadmin">Home</a></li>
+        
+        
+        <li><a class="drop" href="#">Views</a>
+          <ul>
+            <li><a href="/adminuserview">USERS</a></li>
+            <li><a href="/adminspview">SERVICE PROVIDERS</a></li>
+     
+          </ul>
+        </li>
+        <li><a class="drop" href="#">Transactions</a>
+          <ul>
+            <li><a href="/admindth">DTH</a></li>
+            <li><a href="/adminmob">MOBILE</a></li>
+          
+            
+            
+          </ul>
+        </li>
+        <li class="active"><a href="/admincmpl">Complaints</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+      <!-- ################################################################################################ --> 
+    </nav>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <div class="rounded">
+    <main class="container clear"> 
+      <!-- main body --> 
+      <!-- ################################################################################################ -->
+      <h1 style="color:purple">COMPLAINT &nbsp; HISTORY</h1>
+      <p>&nbsp;</p>
+      <div class="scrollable">
+   
+          <table border="1" style="color:#BC0331;">
+          <thead>
+            <tr>
+              <th>&nbsp;&nbsp;User</th>
+              <th>&nbsp;&nbsp;Service Provider</th>
+              <th >&nbsp;&nbsp;Complaint type</th>
+                <th>&nbsp;&nbsp;Details</th>
+                <th>&nbsp;&nbsp;Status</th>
+              <th>Action</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            {% for e in cm %}
+            <tr>
+              <td>&nbsp;&nbsp;{{e.name}}&nbsp;</td>
+              <td>&nbsp;&nbsp;{{e.spname}}&nbsp;</td>
+              <td>&nbsp;&nbsp;{{e.complaint}}&nbsp;</td>
+              
+             <td>&nbsp;&nbsp;{{e.details}}&nbsp;</td>
+
+             <td style="color:green;">&nbsp;&nbsp;{{e.status}}&nbsp;</td>
+             
+         <form >
+            {% csrf_token %}
+              <input type="hidden" value="e.id" name="id">
+              <td colspan="2"><input type="button" onclick="window.location.href='/deletecmpl/{{e.id}}'" 
+                 value="Remove"></td></form> 
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+          
+        <br />
+<!--           
+        <h1 style="color:purple">DEACTIVATED USERS</h1>
+    <p>&nbsp;</p>
+    <div class="scrollable">
+ 
+        <table border="1" style="color:#BC0331;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th> 
+            <th>Contact</th>
+            <th>Operations</th>
+          
+          </tr>
+        </thead>
+        <tbody> 
+         
+                {% for f in s %}
+            <tr>
+                <td>{{f.id}}</td>
+                <td>{{f.fname}}</td>
+              <td>{{f.email}}</td>
+               <td>{{f.mob}}</td>  
+             <form >
+               {% csrf_token %} 
+                <input type="hidden" value="f.id" name="id">
+                <td colspan="2"><input type="button" onclick="window.location.href='/activateuser/{{f.id}}'" 
+                   value="Activate User"></td></form> 
+          </tr> 
+          {% endfor %} 
+       </tbody>
+      </table>
+         -->
+          
+          
+          
+          
+      </div>
+      <!-- ################################################################################################ --> 
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+</div>
+    <div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved </p>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+<!-- JAVASCRIPTS --> 
+      </body></html>

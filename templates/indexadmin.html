@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Wallet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+    {% csrf_token %}
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+   
+  </div>
+</div>
+
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1 ><a href="#" style="color:cornflowerblue;"><i><img src="/static/images/logo.png" alt=" " /></i>QuickPay</a></h1><br>
+      <p>Admin Pannel</p>
+    </div>
+    <div class="fl_right">
+      
+    </div>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div class="rounded">
+    <nav id="mainav" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="#">Home</a></li>
+        
+        
+        <li><a class="drop" href="#">Views</a>
+          <ul>
+            <li><a href="/adminuserview">USERS</a></li>
+            <li><a href="/adminspview">SERVICE PROVIDERS</a></li>
+     
+          </ul>
+        </li>
+        <li><a class="drop" href="#">Transactions</a>
+          <ul>
+            <li><a href="/admindth">DTH</a></li>
+            <li><a href="/adminmob">MOBILE</a></li>
+          
+            
+            
+          </ul>
+        </li>
+        <li><a href="/admincmpl">Complaints</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+      <!-- ################################################################################################ --> 
+    </nav>
+  </div>
+</div>
+
+<div class="wrapper row3">
+    <div class="rounded">
+      <main class="container clear"> 
+        <!-- main body --> 
+        <!-- ################################################################################################ -->
+        <div class="group btmspace-30"> 
+          <!-- Left Column -->
+          
+          <!-- / Left Column --> 
+          <!-- Middle Column -->
+          
+          <!-- / Middle Column --> 
+          <!-- Right Column -->
+          <div class="one_quarter sidebar"> 
+            <!-- ################################################################################################ -->
+            
+            
+            <!-- ################################################################################################ --> 
+          </div>
+          <!-- / Right Column --> 
+        </div>
+        <!-- ################################################################################################ --> 
+        <!-- ################################################################################################ -->
+        <div id="twitter" class="group btmspace-30">
+            
+          <div class="one_quarter first center"><a href="#"><i>
+              <img src="/static/images/twitter.png" ></i><br><br>
+            ADMIN PANNEL</a></div>
+            <img src="/static/images/slider11.png" style="margin-left: 12em;height:20em;">
+          <div class="three_quarter bold">
+           
+          </div>
+        </div>
+        <!-- ################################################################################################ --> 
+        <!-- ################################################################################################ -->
+        
+        <!-- ################################################################################################ --> 
+        <!-- / main body -->
+        <div class="clear"></div>
+      </main>
+    </div>
+  </div>
+      </body></html>

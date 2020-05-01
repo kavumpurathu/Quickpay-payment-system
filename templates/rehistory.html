@@ -59,30 +59,44 @@
   <br><br>
     <style>
     th{color:#FFFFFF; background-color:#029766;}</style>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
+  
+function changeSID()
+{
+
+iCustomerId = document.getElementById("sort").value;
+url         = "rehistory.html" +iCustomerId;
+document.location = url;
+}
+
+
+</script> -->
     
-    </script>
     
               <br /><br />
-    <h2 align="center" style="font-size:24px; color:red;">RECHARGE HISTORY</h2> 
-              <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sort:&nbsp;&nbsp;</label>
-                 <select id="sort" name="sort"  style="width:19em;">
+    <h2 align="center" style="font-size:24px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:seagreen;">RECHARGE HISTORY</h2> 
+              <!-- <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sort by:&nbsp;&nbsp;</label>
+                 <select id="sort" name="sort"   style="width:19em;">
                  
-        <option value="date">Date</option>
-                    <option value="service">Service </option>
+     
+                    <option value="service">Service Provider </option>
+                    <option value="service">Service Number </option>
                     <option value="amount">Amount </option>
                     </select>
-                   
+                    -->
   
-    <br /><br />
+    <br>
     <table style="width:100%;" >
      
-      <th align="left">&nbsp;&nbsp;&nbsp;Username</th>
+     
       <th align="left">&nbsp;&nbsp;&nbsp;Service Provider</th>
+      <th align="left">Category</th>
       <th align="left">Service Number</th>
 
     <th align="left">Amount</th>
-    <th align="left">&nbsp;Date</th>
+    <th align="left">Date</th>
+ 
    <tr>
      
      
@@ -92,11 +106,13 @@
         {% for e in h %}
 
         <tr>
-             <td>&nbsp;&nbsp;&nbsp; {{e.uname}} &nbsp;</td>
+            
              <td>&nbsp;&nbsp;&nbsp; {{e.s_provider}} &nbsp;</td>
+             <td>&nbsp; {{e.category}}&nbsp;</td>
              <td>&nbsp; {{e.service_no}}&nbsp;</td>
              <td>&nbsp; {{e.amount}}&nbsp;</td>
-             <td>&nbsp; {{e.date}}&nbsp;</td>
+             <td>&nbsp; {{e.end_date}}&nbsp;</td>
+            
           
              
               
