@@ -39,16 +39,15 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="/userhome" style="color:blue" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="/wallet" style="color:blue"class="nav-link">WALLET</a></li>
-            <li class="nav-item active "><a style="color:blue" class="nav-link" href="/mcharge" >MOBILE</a></li>
-            <li class="nav-item"><a  class="nav-link"style="color:blue" href="/dcharge" >DTH</a></li>
+	          <li class="nav-item nav-item cta mr-md-1"><a href="/userhome"  class="nav-link">Home</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/wallt" class="nav-link">Wallet</a></li>
+            <li class="nav-item nav-item cta mr-md-1  "><a class="nav-link" href="/mcharge" >Mobile</a></li>
+            <li class="nav-item nav-item cta mr-md-1 "><a  class="nav-link" href="/dcharge" >Dth</a></li>
 	         
-            <li class="nav-item"><a href="/care"style="color:blue"class="nav-link">COMPLAINTS</a></li>
-            <li class="nav-item"><a href="/rehistory/{{user.username}}" style="color:blue"class="nav-link">RECHARGE HISTORY</a></li>
-	          <li class="nav-item"><a href="/logout" style="color:blue"class="nav-link">LOGOUT</a></li>
-	          <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-	          
+            <li class="nav-item nav-item cta mr-md-1"><a href="/care"class="nav-link">Complaints</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/rehistory/{{user.username}}" class="nav-link">Recharge Details</a></li>
+	          <li class="nav-item cta mr-md-1"><a href="/logout" class="nav-link">Logout</a></li>
+	      
 
 	        </ul>
 	      </div>
@@ -108,10 +107,14 @@
        <p class="validation01"> <span class="invalid">No spaces or brackets e.g. 9999999999</span> <span class="valid">Your mobile number is valid</span> </p>
        Amount *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <input type="number" id="tel2" name="amount" style="width: 17em;background-color: paleturquoise;" required /><br> 
-         <br><input type="hidden" name =status value="null">
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <input type = "submit" id = "clickme" value="Recharge" style="background-color:darkgreen;color:#FFFFFF; border-radius: 13em;width: 13em;"/>
+         <input type="number" id="tel2" name="amount" style="width: 17em;background-color: paleturquoise;" required />
+         <input type="hidden" name =status value="null">
+         <br><br><h5 style="color:orangered">Choose your payment option:</h5>&nbsp;
+         <input type="radio" name="type" value="wallet" /> Wallet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="radio" name="type" value="stripe" /> Credit/Debit card<br>
+     <BR>
+         <input type = "submit" id = "clickme" value="Proceed" style="background-color:darkgreen;color:#FFFFFF; border-radius: 13em;width: 13em;"/>
         </div> <div id = "alert_placeholder"></div> 
               
        <!-- <h4 style ="font-size:25px; color:orangered">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script type="text/javascript">
+      H5F.listen(window,"load",function () {
+        H5F.setup(document.getElementById("signup"));
+      },false);
+    </script>
   </head>
   <body style="background-color:black;">
     
@@ -36,17 +42,17 @@
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
+        <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item "><a href="/userhome" style="color:blue"class="nav-link">HOME</a></li>
-	          <li class="nav-item  active"><a href="#" style="color:blue"class="nav-link">WALLET</a></li>
-	          <li class="nav-item "><a  class="nav-link" style="color:blue"href="/mcharge" >MOBILE</a></li>
-            <li class="nav-item"><a  class="nav-link" style="color:blue"href="/dcharge" >DTH</a></li>
-            <li class="nav-item"><a href="/care"style="color:blue"class="nav-link">COMPLAINTS</a></li>
-            <li class="nav-item"><a href="/rehistory/{{user.username}}" style="color:blue"class="nav-link">RECHARGE HISTORY</a></li>
-	          <li class="nav-item"><a href="/logout" style="color:blue"class="nav-link">LOGOUT</a></li>
-	          <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-	          
+	          <li class="nav-item nav-item cta mr-md-1"><a href="/userhome"  class="nav-link">Home</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/wallt" class="nav-link">Wallet</a></li>
+            <li class="nav-item nav-item cta mr-md-1  "><a class="nav-link" href="/mcharge" >Mobile</a></li>
+            <li class="nav-item nav-item cta mr-md-1 "><a  class="nav-link" href="/dcharge" >Dth</a></li>
+	         
+            <li class="nav-item nav-item cta mr-md-1"><a href="/care"class="nav-link">Complaints</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/rehistory/{{user.username}}" class="nav-link">Recharge Details</a></li>
+	          <li class="nav-item cta mr-md-1"><a href="/logout" class="nav-link">Logout</a></li>
+	      
 
 	        </ul>
 	      </div>
@@ -63,30 +69,49 @@
 				
 				<section><BR><BR>
             <img src="/static/images/pic1.jpg" alt=" " />
-            <form  method="post" id="signup">
-
+            <BR><BR>
+            {% if messages %}
+    <ul class ="messages">
+      {% for message in messages %}
+      
+      
+  
+<h6 style="list-style: none; font-family:'Times New Roman', Times, serif; background-color: blue;color: white;box-shadow: 12px 12px 12px#83f051;">
+      {% if message.tags %} <class={{message.tags}}{% endif %}> 
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {{message}}
+  </h6>
+      {% endfor %}
+      </ul>
+      {% endif %}
+            {% for j in k %}
+            <form action="/paynow/" method="post" id="signup">
+              {% csrf_token %}
                 <h2>&nbsp;</h2>
-                <fieldset>
-                  <legend ><h3 style ="font-size:25px; color:#11B388;">My Wallet</h3></legend>
+               
+                  <!-- <legend ><h3 style ="font-size:25px; color:#11B388;">My Wallet</h3></legend> -->
                  
-                
                  
-                  Current Balance &nbsp;
-                  
-                  <input type="text" id="tel2" name="balance" required value="" readonly/>
-                  <input type="hidden" id="tel2" name="cbalance" required value="" />
-                  
+                <h4 style="color: chartreuse;"> Welcome&nbsp;{{user.first_name}} Your Wallet Balance is....</h4> &nbsp;
+                <h4 style="color:crimson"> Rs.&nbsp;&nbsp;
+                 {{j.c_bal}}</h4>
+    <input type="hidden" id="tel2" name="cbalance" required value="{{j.c_bal}}"/>
+      
                  
-                         <BR>
+                          <BR>
                         <BR>
                 
                  Add Money
                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="number" id="tel2" name="amount" required />
                  
-                </fieldset>
-                <br>
-                <input type="button" onclick="window.location.href='/paynow'" value="Proceed" style="background-color: darkgreen;border-radius: 20em;color:#FFFFFF; width:20em;"/>
-                 </form>
+               
+                 &nbsp; &nbsp;
+                <input type="submit"  value="Proceed" style="background-color: darkgreen;border-radius: 7em;color:#FFFFFF; width:7em;"/>
+               
+              </form>
+              {% endfor %}
 				</section>
 
    

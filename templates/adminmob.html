@@ -80,22 +80,22 @@
           <table border="1" style="color:#BC0331;">
           <thead>
             <tr>
-            
+              <th>Date</th>
               <th>Username</th> 
               <th>Service Provider</th> 
               <th>Service No.</th>
               <th>Amount</th>
-              <th>Date</th>
+              <th>Commision</th>
             </tr>
           </thead>
           <tbody>
             {% for g in mo %}
-            <tr>
+            <tr> <td>{{g.date}}</td> 
                 <td>{{g.uname}}</td>
                 <td>{{g.s_provider}}</td>
               <td>{{g.service_no}}</td>
-               <td>{{g.amount}}</td>  
-               <td>{{g.end_date}}</td> 
+               <td>Rs.&nbsp;&nbsp;{{g.amount}}</td>  
+               <td>Rs.&nbsp;&nbsp;{{g.commision}}</td>
             </tr>
             {% endfor %}
           </tbody>

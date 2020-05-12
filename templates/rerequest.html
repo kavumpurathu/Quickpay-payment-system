@@ -38,23 +38,24 @@
 
 
         <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto">
       
               
-              <li class="nav-item  "><a href="/sphome" style="color:blue"class="nav-link">Home</a></li>
-             
-              <li class="nav-item  "><a href="/serviceprofile/{{user.username}}" style="color:blue"class="nav-link"> profile</a></li>
-            
-              
-              <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-              <!--<li class="nav-item cta cta-colored"><a href="/login" class="nav-link">Login/Register</a></li>-->
-              <li class="nav-item "><a href="/spdtls" style="color:blue"class="nav-link">Add offers</a></li>
-              <!-- <li class="nav-item "><a href="/vwcomplaints" style="color:blue"class="nav-link">Complaints</a></li> -->
-              <li class="nav-item "><a href="/comview/{{user.first_name}}" style="color:blue"class="nav-link">Complaints</a></li> 
+            <li class="nav-item nav-item cta mr-md-1 "><a href="/sphome" class="nav-link">Home</a></li>
            
-              <li class="nav-item active"><a href="#" style="color:blue"class="nav-link">Recharge Requests</a></li>
-              <li class="nav-item "><a href="/logout" style="color:blue"class="nav-link">Logout</a></li>
-            </ul>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/serviceprofile/{{user.username}}" class="nav-link"> profile</a></li>
+          
+            
+            <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
+            
+            <!--<li class="nav-item cta cta-colored"><a href="/login" class="nav-link">Login/Register</a></li>-->
+            <li class="nav-item nav-item cta mr-md-1"><a href="/spdtls" class="nav-link">Add offers</a></li>
+            <!-- <li class="nav-item active"><a href="#"style="color:blue" class="nav-link">Complaints</a></li> -->
+            <li class="nav-item nav-item cta mr-md-1"><a href="/comview/{{user.first_name}}" class="nav-link">Complaints</a></li> 
+         
+            <li class="nav-item nav-item cta mr-md-1"><a href="/rerequest/{{user.username}}/{{user.first_name}}" class="nav-link">Recharge Requests</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/logout" class="nav-link">Logout</a></li>
+          </ul>
           
           </div>
         </div>
@@ -74,16 +75,25 @@
     
     </script>
     
-              <br /><br /><br>
-    <h2 align="center" style="font-size:24px; color:red;">RECHARGE REQUESTS</h2> 
+              <br /><br />
+              <h2 align="center" style="font-size:24px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              color:yellow;">RECHARGE HISTORY</h2> 
               <!-- <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select category:&nbsp;&nbsp;</label>
                  <select id="sort" name="sort"  style="width:19em;">
                  
         <option value="date">mobile</option>
                    
                     <option value="amount">dth </option>
-                    </select> -->
-                   
+                    </select> --><br>
+                  <div class="row">
+                    <div class="col">
+                      <!-- <div class="card "> -->
+                    <form method="get">
+                      {{myfilter.form}}&nbsp;&nbsp;&nbsp;
+                      <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                  </div> </div>
+                <!-- </div> -->
   
     <br />
     <table style="width:100%;" >
@@ -105,7 +115,7 @@
         <td>&nbsp;&nbsp;&nbsp; {{e.fname}} &nbsp;</td>
         <td>&nbsp; {{e.service_no}}&nbsp;</td>
         <td>&nbsp; {{e.amount}}&nbsp;</td>
-        <td>&nbsp; {{e.end_date}}&nbsp;</td>
+        <td>&nbsp; {{e.date}}&nbsp;</td>
      
         
          

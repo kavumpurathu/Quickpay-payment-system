@@ -37,25 +37,15 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-    
-            
-            <li class="nav-item cta cta-colored"><a href="\" class="nav-link">HOME</a></li>
-	          <li class="nav-item cta cta-colored"><a href="/wallet" class="nav-link">WALLET</a></li>
-	          
-	         
-	          
-	        
-	          
-	          <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-	          <!--<li class="nav-item cta cta-colored"><a href="/login" class="nav-link">Login/Register</a></li>-->
-            <li class="nav-item  cta cta-colored"><a  class="nav-link" href="/mcharge" >MOBILE</a></li>
-            <li class="nav-item  cta cta-colored"><a  class="nav-link" href="/dcharge" >DTH</a></li>
-            <li class="nav-item cta cta-colored"><a href="/care"class="nav-link">COMPLAINTS</a></li>
-            <!--<li class="nav-item  cta cta-colored"><a  class="nav-link" href="#" >WATER</a></li>-->
-            <!--<li class="nav-item  cta cta-colored"><a  class="nav-link" href="#" >ELECTRICITY</a></li>-->
-            <li class="nav-item cta cta-colored"><a href="/rehistory/{{user.username}}" class="nav-link">RECHARGE HISTORY</a></li>
-            <li class="nav-item cta cta-colored"><a href="/logout" class="nav-link">LOGOUT</a></li>
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item nav-item cta mr-md-1"><a href="\"  class="nav-link">Home</a></li>
+          <li class="nav-item nav-item cta mr-md-1"><a href="/wallt" class="nav-link">Wallet</a></li>
+          <li class="nav-item nav-item cta mr-md-1  "><a class="nav-link" href="/mcharge" >Mobile</a></li>
+          <li class="nav-item nav-item cta mr-md-1 "><a  class="nav-link" href="/dcharge" >Dth</a></li>
+         
+          <li class="nav-item nav-item cta mr-md-1"><a href="/care"class="nav-link">Complaints</a></li>
+          <li class="nav-item nav-item cta mr-md-1"><a href="/rehistory/{{user.username}}" class="nav-link">Recharge Details</a></li>
+          <li class="nav-item cta mr-md-1"><a href="/logout" class="nav-link">Logout</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -72,7 +62,9 @@
 				<section>
 					<form name="kk" >
               
-              <h1 style="color:blue">Welcome {{user.first_name}}</h1>
+              <h1 style="color:orangered">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp; Welcome {{user.first_name}}</h1>
            
            {% if messages %}
            <ul class ="messages">

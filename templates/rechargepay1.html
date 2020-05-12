@@ -37,7 +37,7 @@
     text-decoration: none;
     -webkit-transition: all 150ms ease;
     transition: all 150ms ease;
-    /* float: left; */
+   
     margin-left: 12px;
     margin-top: 28px;
   }
@@ -138,57 +138,61 @@
     background-color: #fefde5 !important;
   }
   </style>
-  </head>
-  
-  <body>
-    <div class="wrapper">
-    <script src="https://js.stripe.com/v3/"></script>
-
-   
-<br><br><br>
-    <a href="/userhome"  class="nav-link" >Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <a href="/wallt" class="nav-link">Wallet</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="nav-link" href="/mcharge" >Mobile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a  class="nav-link" href="/dcharge" >Dth</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
-    <a href="/care"class="nav-link">Complaints</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/rehistory/{{user.username}}" class="nav-link">Recharge Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="/logout" class="nav-link">Logout</a>
-    <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-    
-    {% for s in k %}
-    <form action="." method="post" id="stripe-form">
-    <h3 style="color:crimson;font-family:Georgia, 'Times New Roman', Times, serif;">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       PAYMENT</h3>
-       <div style="
-          width: 600px;
+ 
+      <main class="container clear"> 
+        <!-- main body --> <br><br>
+        <!-- ################################################################################################ -->
+        
+        <h3 style="color:blue;font-family:Georgia, 'Times New Roman', Times, serif;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAYMENT</h3>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- <div style="
+          width: 800px;
           height: 200px;
           border: 4px solid green;
           padding: 50px;
-          color:darkgreen;
-          margin:30px;">
-         
-          Service Provider :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{s.s_provider}}<br><br>
-        Service Number :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{s.service_no}}<br><br>
-        Amount :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rs. {{s.amount}}<br><br>
-        
+          color:pink;
+          margin:50px;">
+          Service Provider :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        Service Number :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        Amount :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rs.<br><br>
       </div>
+        -->
+        <!-- ################################################################################################ --> 
+        <!-- / main body -->
+       
+      </main>
+    </div>
+  </div>
+      
+  </head>
+  
+  <body style="background-color:black">
+    
+    <div class="wrapper">
+    <script src="https://js.stripe.com/v3/"></script>
+  
+    <form action="." method="post" id="stripe-form">
+      {% csrf_token %}
       <div class="form-row">
-        <label for="card-element">
+        <label for="card-element" style="color:crimson;">
           Credit or debit card
         </label>
-        <div id="card-element" class="StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame5" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-16df0be6e9d0382d0bc6dcf976f8c4c7.html#style[base][color]=%2332325d&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=card&amp;wait=false&amp;rtl=false&amp;keyMode=test&amp;apiKey=pk_test_Epi8W6dz9hDPS2i57WY1T4DF00A80dKlxJ&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" title="Secure payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; height: 19.2px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+        <div id="card-element" class="StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame5" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-7f922aa3a322c853bac1c46f959276e5.html#style[base][color]=%2332325d&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=card&amp;wait=false&amp;rtl=false&amp;keyMode=test&amp;apiKey=pk_test_TYooMQauvdEDq54NiTphI7jx&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" title="Secure payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; height: 19.2px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
   
         <!-- Used to display form errors. -->
         <div id="card-errors" role="alert"></div>
       </div>
   
       <button>Submit Payment</button>
-    </form>{% endfor %}
+    </form>
     </div>
     <div id="stripe-token-handler" class="is-hidden">Success! Got token: <span class="token"></span></div>
   
@@ -264,6 +268,7 @@
       form.submit();
     }
   
+  
     var successElement = document.getElementById('stripe-token-handler');
     document.querySelector('.wrapper').addEventListener('click', function() {
       successElement.className = 'is-hidden';
@@ -274,6 +279,14 @@
       successElement.className = '';
       successElement.querySelector('.token').textContent = token.id;
     }
-  </script><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeController1" allowpaymentrequest="true" src="https://js.stripe.com/v3/controller-6ebc3fe473315fd9737795a374ef8572.html#apiKey=pk_test_Epi8W6dz9hDPS2i57WY1T4DF00A80dKlxJ&amp;stripeJsId=2c45ee2a-9e5f-4ff4-b6bf-b24108721a84&amp;startTime=1530.4750000004788&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
+
+
+  </script><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeController1" allowpaymentrequest="true" src="https://js.stripe.com/v3/controller-8b2064a91752cf0a77e18506caeb2f77.html#apiKey=pk_test_TYooMQauvdEDq54NiTphI7jx&amp;stripeJsId=399daca0-b182-4849-ad5d-9d9ea68c9ea2&amp;startTime=948.725000000195&amp;origin=https%3A%2F%2Fstripe.com&amp;referrer=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;controllerId=__privateStripeController1" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
   
-    <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController0" allowpaymentrequest="true" src="https://js.stripe.com/v3/m-outer-a0f6c1465b8d9aab778cf2913d1d3c86.html#url=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;title=&amp;referrer=&amp;muid=1bea1447-7a54-4030-a25a-d35072212e39&amp;sid=a95dde3c-8f27-480f-846b-0e645f3c0dea&amp;preview=true" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
+    <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController0" allowpaymentrequest="true" src="https://js.stripe.com/v3/m-outer-a0f6c1465b8d9aab778cf2913d1d3c86.html#url=https%3A%2F%2Fstripe.com%2Fdocs%2Fstripe-js&amp;title=&amp;referrer=&amp;muid=1bea1447-7a54-4030-a25a-d35072212e39&amp;sid=8e07edfd-98c7-4d02-b2aa-5feb5b838724&amp;preview=true" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
+  
+  
+  
+  
+  
+  </body></html>
