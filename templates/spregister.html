@@ -793,10 +793,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h1>Service Provider Registration</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-    <form method="POST" action="/spsignup/" name="user_reg">
+    <form method="POST" action="/spsignup/" name="user_reg" enctype="multipart/form-data">
       {% csrf_token %}
-      <input type="text" name="name" id="name" placeholder="Name of service provider "><br>
-      <select name="cate" style="width:28em;"> 
+      <input type="text" name="name" id="name" placeholder="Name of service provider " required><br>
+      <select name="cate" style="width:28em;" required> 
       <option selected disabled>Select Category</option>
                   
       <option>mobile</option>
@@ -806,11 +806,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </select>
       <!--<input type="text" name="cate" id="cate" placeholder="category(mobile,dth,water,electricity)">--><br>
       <br>
-      <input type="text" name="web" id="web" placeholder="Website"><br>
-      <input type="text" name="mob" id="mob" placeholder="Mobile"><br>
-      <input type="email" name="email" id="email" placeholder="Email Id"><br>
-      <input type="password" name="pswd1" id="pswd1" placeholder="Password"><br>
-      <input type="password" name="pswd2" id="pswd2" placeholder="Confirm Password"><br><br><br>
+      <input type="text" name="web" id="web" placeholder="Website" required><br>
+      <Label>Your Icon:&nbsp;&nbsp;</Label><input type="file" name="pi1"  placeholder="" value="" required><br><br>
+      <input type="text" name="mob" id="mob" placeholder="Contact Number" pattern="\d{10}" required><br>
+      <input type="email" name="email" id="email" placeholder="Email Id" required><br>
+      <input type="password" name="pswd1" id="pswd1" placeholder="Password" required><br>
+      <input type="password" name="pswd2" id="pswd2" placeholder="Confirm Password" required><br>
       {% for m in messages %}
       <b style="color: crimson;">{{m.message}}</b>
        {% endfor %}

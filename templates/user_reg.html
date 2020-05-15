@@ -795,12 +795,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="agileits-top">
     <form method="POST" action="/signup/" name="user_reg">
       {% csrf_token %}
-      <input type="text" name="fname" id="fname" placeholder="First Name"><br>
-      <input type="text" name="lname" id="lname" placeholder="Last Name"><br>
-      <input type="text" name="mob" id="mob" placeholder="mobile"><br>
-      <input type="email" name="email" id="email" placeholder="Email Id"><br>
-      <input type="password" name="pswd1" id="pswd1" placeholder="Password"><br>
-      <input type="password" name="pswd2" id="pswd2" placeholder="Confirm Password"><br><br><br>
+      <input type="text" name="fname" id="fname" placeholder="First Name" required><br>
+      <input type="text" name="lname" id="lname" placeholder="Last Name" required><br>
+      <input type="text" name="mob" id="mob" placeholder="mobile" pattern="\d{10}" required><br>
+      <input type="email" name="email" id="email" placeholder="Email Id" required><br>
+      <input type="password" name="pswd1" id="pswd1" placeholder="Password" required><br>
+      <input type="password" name="pswd2" id="pswd2" placeholder="Confirm Password" required><br><br><br>
       {% for m in messages %}
       <b style="color: crimson;">{{m.message}}</b>
        {% endfor %}
