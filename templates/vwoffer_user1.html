@@ -104,7 +104,7 @@
     <!-- <input type="hidden" name =uname value={{user.username}}>
     <input type="hidden" name =name value={{user.first_name}}> -->
     
-    </br><br><br>
+    </br>
      
     <div class="row justify-content-center">
       
@@ -112,7 +112,10 @@
      <thead>
        <tr>
    
-         <th style="color: crimson;text-align: left;font-size:x-large;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Latest Offers</th>
+         <th style="color: crimson;text-align: left;font-size:x-large;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {% for e in sp %}
+      <img src="/media/{{e.img}}" name="gigu" width="68px" height="55px">{% endfor %}&nbsp;&nbsp;Latest Offers</th>
          
         
        </tr>
@@ -120,7 +123,7 @@
       {% for f in ofr %}<tr>
         <td style="color:black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
-        *&nbsp;&nbsp; {{f.ofr_dtls}}</td>
+        *&nbsp;&nbsp; {{f.ofr_dtls}}&nbsp;&nbsp;<span class="badge badge-pill badge-danger">New</span></td>
          </tr>
        {% endfor %}
     </table>

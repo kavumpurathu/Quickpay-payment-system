@@ -49,7 +49,7 @@
             <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
             
             <!--<li class="nav-item cta cta-colored"><a href="/login" class="nav-link">Login/Register</a></li>-->
-            <li class="nav-item nav-item cta mr-md-1"><a href="/spdtls" class="nav-link">Add offers</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/spdtls/{{user.username}}" class="nav-link">Add offers</a></li>
             <!-- <li class="nav-item active"><a href="#"style="color:blue" class="nav-link">Complaints</a></li> -->
             <li class="nav-item nav-item cta mr-md-1"><a href="/comview/{{user.first_name}}" class="nav-link">Complaints</a></li> 
          
@@ -59,6 +59,7 @@
         
 	      </div>
       </div>
+      <a href="/usetpwd1" class="nav-link" style="color:black;"><b>|&nbsp;Change Password&nbsp;|</b></a>
 	  </nav>
     <!-- END nav -->
     
@@ -71,13 +72,10 @@
           
 	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 				
-				<section>
+				<section> 
           <form name="kk" >
            
-              <h1  style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  
-                  &nbsp;&nbsp;&nbsp;&nbsp;Welcome {{user.first_name}}</h1>
+             
               <br>
               <br>
               <h1 ><marquee scrollamount="20" dir="ltr" style="color:snow">Know Your Personal Recharge Requests

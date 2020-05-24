@@ -123,35 +123,32 @@ document.location = url;
       </form>
     </div> </div><br>
     <table style="width:100%;" >
-     
-     
       <th align="left">&nbsp;&nbsp;&nbsp;Service Provider</th>
       <th align="left">Category</th>
       <th align="left">Service Number</th>
-
     <th align="left">Amount</th>
     <th align="left">&nbsp;&nbsp;Date</th>
- 
+    <th align="left">&nbsp;&nbsp;Operation</th>
    <tr>
-     
-     
-        
-       
-        </tr>
+  </tr>
         {% for e in h %}
-
         <tr>
-            
-             <td style="color:black;">&nbsp;&nbsp;&nbsp; {{e.s_provider}} &nbsp;</td>
+              <td style="color:black;">&nbsp;&nbsp;&nbsp; {{e.s_provider}} &nbsp;</td>
              <td style="color:black;">&nbsp; {{e.category}}&nbsp;</td>
              <td style="color:black;">&nbsp; {{e.service_no}}&nbsp;</td>
              <td style="color:black;">&nbsp; {{e.amount}}&nbsp;</td>
              <td style="color:black;">&nbsp; {{e.date}}&nbsp;</td>
-            
           
-             
-              
-            
+             <td>
+              <form action="/billfun/{{e.id}}/{{e.fname}}/{{e.s_provider}}/{{e.category}}/{{e.service_no}}/{{e.amount}}/{{e.date}}"
+               method="POST">
+                {% csrf_token %}
+          <!-- <input type="hidden" value="user.first_name" name="fname"> -->
+          <!-- <input type="hidden" value="e.uname" name="uname">
+          <input type="hidden" name="uname1" value="{{user.first_name}}"> -->
+          <input type="submit" value="Download Bill" style="color: #ffffff;background:green;border-radius: 1em;height: 2em;">
+        </form></td>
+        
              </tr>
              {% endfor %}
       </table>

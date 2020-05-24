@@ -45,15 +45,14 @@
         
         <li  class="active"><a class="drop" href="#">Views</a>
           <ul>
-            <li><a href="/adminuserview">USERS</a></li>
-            <li><a href="/adminspview">SERVICE PROVIDERS</a></li>
-     
+            <li><a href="/adminuserview">Users</a></li>
+            <li><a href="/adminspview">Service Providers</a></li>
           </ul>
         </li>
         <li><a class="drop" href="#">Transactions</a>
           <ul>
             <li><a href="/admindth">DTH</a></li>
-            <li><a href="/adminmob">MOBILE</a></li>
+            <li><a href="/adminmob">Mobile</a></li>
           
             
             
@@ -111,7 +110,7 @@
         </table>
           
         <br />
-<!--           
+          
         <h1 style="color:purple">DEACTIVATED USERS</h1>
     <p>&nbsp;</p>
     <div class="scrollable">
@@ -120,31 +119,34 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Username</th> 
+            <th>Username</th>
+            <th>Provider Name</th>
+            <th>Category</th>
+            <th>Website</th>
             <th>Contact</th>
-            <th>Operations</th>
-          
+            <th>Operation</th>
           </tr>
         </thead>
         <tbody> 
          
-                {% for f in s %}
+                {% for f in k %}
             <tr>
-                <td>{{f.id}}</td>
-                <td>{{f.fname}}</td>
+              <td>{{f.id}}</td>
               <td>{{f.email}}</td>
-               <td>{{f.mob}}</td>  
+              <td>{{f.name}}</td>
+              <td>{{f.category}}</td>
+              <td>{{f.website}}</td>
+             <td>{{f.mob}}</td>  
              <form >
                {% csrf_token %} 
                 <input type="hidden" value="f.id" name="id">
-                <td colspan="2"><input type="button" onclick="window.location.href='/activateuser/{{f.id}}'" 
-                   value="Activate User"></td></form> 
+                <td colspan="2"><input type="button" onclick="window.location.href='/reactivatesp/{{f.uname}}'" 
+                   value="Activate "></td></form> 
           </tr> 
           {% endfor %} 
        </tbody>
       </table>
-         -->
+        
           
           
           

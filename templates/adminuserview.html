@@ -44,15 +44,15 @@
         
         <li  class="active"><a class="drop" href="#">Views</a>
           <ul>
-            <li><a href="/adminuserview">USERS</a></li>
-            <li><a href="/adminspview">SERVICE PROVIDERS</a></li>
+            <li><a href="/adminuserview">Users</a></li>
+            <li><a href="/adminspview">Service Providers</a></li>
      
           </ul>
         </li>
         <li><a class="drop" href="#">Transactions</a>
           <ul>
             <li><a href="/admindth">DTH</a></li>
-            <li><a href="/adminmob">MOBILE</a></li>
+            <li><a href="/adminmob">Mobile</a></li>
           
             
             
@@ -99,14 +99,14 @@
             {% csrf_token %}
               <input type="hidden" value="e.id" name="id">
               <td colspan="2"><input type="button" onclick="window.location.href='/deleteuser/{{e.email}}'" 
-                 value="Deactivate User"></td></form>
+                 value="Deactivate"></td></form>
             </tr>
             {% endfor %}
           </tbody>
         </table>
           
-        <br />
-<!--           
+       
+         
         <h1 style="color:purple">DEACTIVATED USERS</h1>
     <p>&nbsp;</p>
     <div class="scrollable">
@@ -133,13 +133,13 @@
              <form >
                {% csrf_token %} 
                 <input type="hidden" value="f.id" name="id">
-                <td colspan="2"><input type="button" onclick="window.location.href='/activateuser/{{f.id}}'" 
-                   value="Activate User"></td></form> 
+                <td colspan="2"><input type="button" onclick="window.location.href='/reactivateuser/{{f.email}}'" 
+                   value="Activate"></td></form> 
           </tr> 
           {% endfor %} 
        </tbody>
       </table>
-         -->
+       
           
           
           

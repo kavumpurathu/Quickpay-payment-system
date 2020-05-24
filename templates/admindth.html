@@ -44,15 +44,15 @@
         
         <li ><a class="drop" href="#">Views</a>
           <ul>
-            <li><a href="/adminuserview">USERS</a></li>
-            <li><a href="/adminspview">SERVICE PROVIDERS</a></li>
+            <li><a href="/adminuserview">Users</a></li>
+            <li><a href="/adminspview">Service Providers</a></li>
      
           </ul>
         </li>
         <li class="active"><a class="drop" href="#">Transactions</a>
           <ul>
             <li><a href="/admindth">DTH</a></li>
-            <li><a href="/adminmob">MOBILE</a></li>
+            <li><a href="/adminmob">Mobile</a></li>
           
             
             
@@ -97,11 +97,18 @@
                <td>Rs.&nbsp;&nbsp;{{g.amount}}</td> 
              
               <td>Rs.&nbsp;&nbsp;{{g.commision}}</td>
+              
             </tr>
             {% endfor %}
+           
           </tbody>
-        </table>
+         
+        </table><div>  <form >
+          {% csrf_token %} 
           
+           <input type="button" onclick="window.location.href='/dthsum/'" 
+              value="Total" style="margin-left: 800px;background: green;color: white;height: 2em ;width: 10em;"></form> </div>
+      
         <br />
 <!--           
         <h1 style="color:purple">DEACTIVATED USERS</h1>

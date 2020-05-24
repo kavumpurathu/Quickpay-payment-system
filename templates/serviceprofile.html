@@ -49,7 +49,7 @@
             <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
             
             <!--<li class="nav-item cta cta-colored"><a href="/login" class="nav-link">Login/Register</a></li>-->
-            <li class="nav-item nav-item cta mr-md-1"><a href="/spdtls" class="nav-link">Add offers</a></li>
+            <li class="nav-item nav-item cta mr-md-1"><a href="/spdtls/{{user.username}}" class="nav-link">Add offers</a></li>
             <!-- <li class="nav-item active"><a href="#"style="color:blue" class="nav-link">Complaints</a></li> -->
             <li class="nav-item nav-item cta mr-md-1"><a href="/comview/{{user.first_name}}" class="nav-link">Complaints</a></li> 
          
@@ -114,6 +114,7 @@
   
    
     <h6 style="color:green">A Complete {{e.category}} service platform</h6>
+
     <table style="width:100%;" >
      <tr>
     
@@ -125,10 +126,11 @@
     <th align="left"></th>
     <th align="left"></th>
     <th align="left"></th>
-    <th align="left"></th>
+    <th align="left"></th><th align="left"></th>
     <th align="left">EDIT &nbsp;&nbsp;PROFILE</th>
-    <th align="left"></th>
-    
+    <th align="left">     
+      
+      <th align="left"></th>
     </tr>
    <tr>
         <td>&nbsp;&nbsp;</td>
@@ -162,6 +164,7 @@
                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website:&nbsp;&nbsp;</label>
                     <input type="text" name=web id="web"  style="width:19em;" value="{{e.website}}" required>
+                  
 <br><br>
                     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -183,18 +186,22 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                     
+                    
                       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
       <input type = "submit" id = "clickme" value="UPDATE" style="background-color:darkgreen;color:#FFFFFF; width: 14em;border-radius: 20em;"/>
+     
       <div id = "alert_placeholder"></div>
       
+     
 
 {% endfor %}
 </form>
+
+
 <br>
 {% if messages %}
 <ul class ="messages">

@@ -156,28 +156,14 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="/logout" class="nav-link">Logout</a>
     <!--<li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>-->
-    
+    <br>
     {% for s in k %}
-    <form action="." method="post" id="stripe-form">
-    
-       <div style="
-          width: 400px;
-          height: 180px;
-          border: 4px solid green;
-          padding: 40px;
-          color:darkgreen;
-          margin:30px;">
-         
-        Service Provider :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b>{{s.s_provider}}</b><br><br>
-        Service Number :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>{{s.service_no}}</b><br><br>
-        Amount :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Rs. {{s.amount}}</b><br><br>
-        
-      </div> 
-      <h3 style="color:crimson;font-family:Georgia, 'Times New Roman', Times, serif;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      PAYMENT</h3><br>
+    <form action="." method="post" id="stripe-form"><br><br>
+    <h3 style="color:crimson;font-family:Georgia, 'Times New Roman', Times, serif;">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       PAYMENT</h3><br>
+     
       <div class="form-row">
         <label for="card-element">
           Credit or debit card
@@ -186,11 +172,11 @@
   
         <!-- Used to display form errors. -->
         <div id="card-errors" role="alert"></div>
-      </div>
-  
-      <button style="width:410px;">Submit Payment</button>
+     
+        
+      <button class="submit" style="width:410px;">SUBMIT</button>
     </form>{% endfor %}
-    </div>
+    
     <div id="stripe-token-handler" class="is-hidden">Success! Got token: <span class="token"></span></div>
   
   

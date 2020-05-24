@@ -42,7 +42,7 @@
       <ul class="clear">
         <li><a href="/indexadmin">Home</a></li>
         
-        <li><a class="drop" href="#">Views</a>
+        <li ><a class="drop" href="#">Views</a>
           <ul>
             <li><a href="/adminuserview">Users</a></li>
             <li><a href="/adminspview">Service Providers</a></li>
@@ -72,80 +72,19 @@
     <main class="container clear"> 
       <!-- main body --> 
       <!-- ################################################################################################ -->
-      <h1 style="color:purple">TRANSACTION HISTORY</h1>
+      <h1 style="color:purple">TOTAL COMMISION</h1>
       <p>&nbsp;</p>
-      <div class="scrollable">
+      
    
-          <table border="1" style="color:#BC0331;">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Username</th> 
-              <th>Service Provider</th> 
-              <th>Service No.</th>
-              <th>Amount</th>
-              <th>Commision</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for g in mo %}
-            <tr> <td>{{g.date}}</td> 
-                <td>{{g.uname}}</td>
-                <td>{{g.s_provider}}</td>
-              <td>{{g.service_no}}</td>
-               <td>Rs.&nbsp;&nbsp;{{g.amount}}</td>  
-               <td>Rs.&nbsp;&nbsp;{{g.commision}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table><div>
+   
+
+<input type="button" value="RS.&nbsp;{{p}}" style="background:darkorchid;font-size:x-large;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: white;width: 39em;height: 3em;">
+      <br>
+     <a href="/admindth" style="font-size: large;color:blue;margin-left: 740px;">Back to previous</a>   
+    
           
-          <form >
-            {% csrf_token %} 
-            
-             <input type="button" onclick="window.location.href='/mobsum/'" 
-                value="Total" style="margin-left: 800px;background: green;color: white;height: 2em ;width: 10em;"></form> </div>
-        
-          <br />
-<!--           
-        <h1 style="color:purple">DEACTIVATED USERS</h1>
-    <p>&nbsp;</p>
-    <div class="scrollable">
- 
-        <table border="1" style="color:#BC0331;">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Username</th> 
-            <th>Contact</th>
-            <th>Operations</th>
-          
-          </tr>
-        </thead>
-        <tbody> 
-         
-                {% for f in s %}
-            <tr>
-                <td>{{f.id}}</td>
-                <td>{{f.fname}}</td>
-              <td>{{f.email}}</td>
-               <td>{{f.mob}}</td>  
-             <form >
-               {% csrf_token %} 
-                <input type="hidden" value="f.id" name="id">
-                <td colspan="2"><input type="button" onclick="window.location.href='/activateuser/{{f.id}}'" 
-                   value="Activate User"></td></form> 
-          </tr> 
-          {% endfor %} 
-       </tbody>
-      </table>
-         -->
-          
-          
-          
-          
-      </div>
+     
       <!-- ################################################################################################ --> 
       <!-- / main body -->
       <div class="clear"></div>
